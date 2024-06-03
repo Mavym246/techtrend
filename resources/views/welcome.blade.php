@@ -100,7 +100,7 @@
 
 <div class="container py-4" style="margin-top:25rem;">
     <div class="p-5 mb-4 rounded-3" style="background-image:linear-gradient(45deg, #12c2e9, #c471ed, #f64f59);">
-      <div class="container-fluid py-5">
+      <div class="py-5 container-fluid">
         <h1 class="display-5 fw-bold">About us</h1>
         <p class="col-md-8 fs-4">With over a decade of experience in the market, we have earned the trust of thousands of satisfied customers through our commitment to providing quality products and excellent service. We specialize in the latest technologies and trends in mobile phones, tablets, computers and accessories such as handsets and smart watches.</p>
       </div>
@@ -108,14 +108,14 @@
 
     <div class="row align-items-md-stretch">
       <div class="col-md-6">
-        <div class="h-100 p-5 text-white rounded-3" style="background:#12c2e936;">
+        <div class="p-5 text-white h-100 rounded-3" style="background:#12c2e936;">
           <h2>Where can you find us?</h2>
           <p>Galerie Harfa</p>
           <p>Českomoravská 190 00  Praha 9</p>
         </div>
       </div>
       <div class="col-md-6">
-        <div class="h-100 p-5 border bg-light rounded-3">
+        <div class="p-5 border h-100 bg-light rounded-3">
           <h2>Opening hours</h2>
           <p>Mo - Fr    8:00-20:00</p>
           <p>Sa - Sn    9:00-19:00</p>
@@ -140,7 +140,7 @@
             <li><a href="#REVIEWS">REVIEWS</a></li>
             <li><a href="#ABOUT US">ABOUT US</li>
         </div> 
-               
+               <a style="color:black" href="/login">admin</a>
         </footer>
  
 <style>
