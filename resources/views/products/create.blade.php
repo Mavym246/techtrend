@@ -17,66 +17,47 @@
     <link rel="icon" type="image/png" sizes="32x32" href="" alt="logo">
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg bg-dark fixed-top">
-        <div class="container-fluid">
-            <a class="navbar-brand left" href="#HOME">
-                <img src="#" width="70px" height="70px" alt="logo">
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarul" aria-controls="navbarul" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarul">
-                <ul class="navbar-nav ms-auto right font">
-                    <li class="nav-item">
-                        <a class="nav-link" href="/">HOME</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/categories">CATEGORIES</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/products" id="#">PRODUCTS</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#REVIEWS">REVIEWS</a>
-                    </li>
-                    @auth
-                    <li class="mx-2 nav-item">
-                      <button onclick="location.href='/dashboard'" class="btn btn-primary">Dashboard</button>
-                    </li>
-
-                    <li class="nav-item">
-                      <form method="POST" action="{{ route('logout') }}">
-                        @csrf
-                        <button class="btn btn-danger" type="submit">Logout</button>
-                      </form>
-                    </li>
-                    @endauth
-                </ul>
-            </div>
-        </div>
-    </nav>
     
-    <div class="container">
-        <h1 style="margin-top: 10rem">Create Product</h1>
+    <section style="display:flex;"class="h-100">
+    <div class="container" style="display:flex; justify-content:center; flex-direction:column; flex-wrap:wrap; align-content:center; align-items:center;">
+        <h1>Create Product</h1>
 
         <form action="{{ route('products.store') }}" method="POST">
             @csrf
-            <label>Name:</label>
-            <input type="text" name="name" required>
-            <label>Price:</label>
-            <input type="text" name="price" required>
-            <label>Description:</label>
-            <input type="text" name="description" required>
-            <label>Image URL:</label>
-            <input type="text" name="image" required>
-            <label>Release Date:</label>
-            <input type="date" name="release_date" required>
-            <label>Category ID:</label>
-            <input type="text" name="category_id" required>
-            <button type="submit">Create</button>
+            <div class="form-floating mb-3 text-white">
+  <input type="text" name="name" required class="form-control bg-dark text-white" id="floatingInput" placeholder="name@example.com">
+  <label for="floatingInput bg-dark">Name:</label>
+</div>
+    
+<div class="form-floating mb-3 text-white">
+  <input type="text" name="price" required class="form-control bg-dark text-white" id="floatingInput" placeholder="name@example.com">
+  <label for="floatingInput bg-dark">Price:</label>
+</div>
+
+<div class="form-floating mb-3 text-white">
+  <input type="text" name="description" required class="form-control bg-dark text-white" id="floatingInput" placeholder="name@example.com">
+  <label for="floatingInput bg-dark">Description:</label>
+</div>
+      
+<div class="form-floating mb-3 text-white">
+  <input type="text" name="image" required class="form-control bg-dark text-white" id="floatingInput" placeholder="name@example.com">
+  <label for="floatingInput bg-dark">Image URL:</label>
+</div>
+
+<div class="form-floating mb-3 text-white">
+  <input type="date" name="release_date" required class="form-control bg-dark text-white" id="floatingInput" placeholder="name@example.com">
+  <label for="floatingInput bg-dark">Release Date:</label>
+</div>
+            
+<div class="form-floating mb-3 text-white">
+  <input type="text" name="category_id" required class="form-control bg-dark text-white" id="floatingInput" placeholder="name@example.com">
+  <label for="floatingInput bg-dark">Category ID:</label>
+</div>
+            
+<button type="submit" class="btn btn-outline-light" style="display:flex;">Create</button>    
         </form>
     </div>
-
+    </section>
 
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');

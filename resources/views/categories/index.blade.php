@@ -1,5 +1,5 @@
 <html lang="en"><head>
-    <title>Phones</title>
+    <title>Categories</title>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="Buyport" content="width=device-width, initial-scale=1.0">
@@ -64,9 +64,9 @@
 
 
         @foreach ($categories as $category)
-        <div class="col-md-12">
-            <div class="p-5 text-center text-white border h-100 rounded-3">
-              <h2><a href="{{ url('/categories/' . $category->id_category) }}">{{ $category->name }}</a></h2>
+        <div class="col-md-6">
+            <div class="p-5 pt-5 text-center text-white h-100 rounded-3 text-center color">
+              <h2 class="text-white" style="text-decoration:none;"><a href="{{ url('/categories/' . $category->id_category) }}">{{ $category->name }}</a></h2>
             </div>
           </div>
         @endforeach
@@ -185,5 +185,20 @@ footer .menu li a{
 }
 footer .menu li a:hover{
     opacity: 1;
+}
+.col-md-6{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.col-md-6 h2 a{
+    list-style: none;
+    text-decoration: none;
+    color: white;
+    opacity: 0.5;
+    transition: 0.5s;
+}
+.col-md-6 h2 a:hover{
+    opacity: 1;
+    
 }
 </style>

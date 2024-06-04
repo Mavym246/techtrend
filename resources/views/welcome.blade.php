@@ -1,5 +1,5 @@
 <html lang="en"><head>
-  <title>Products</title>
+  <title>Home page</title>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="Buyport" content="width=device-width, initial-scale=1.0">
@@ -85,24 +85,24 @@
 
 <!-- Three columns of text below the carousel -->
 <div class="row">
-  <div class="col-lg-4">
-    <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"></rect><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
+  <div class="col-lg-4" style="display:flex; align-items:center; flex-direction:column;">
+    <img class="img" style="margin-bottom: 20px;" xmlns="http://www.w3.org/2000/svg" role="img" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"></rect></img>
 
-    <h2 class="white">Heading</h2>
+    <h2 class="white">Cole</h2>
     <p class="white">I bought a phone for my son and was pleasantly surprised. The staff was really friendly. I recommend it to everyone.</p>
     
   </div><!-- /.col-lg-4 -->
-  <div class="col-lg-4">
-    <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"></rect><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
+  <div class="col-lg-4" style="display:flex; align-items:center; flex-direction:column;">
+    <img class="img" style="margin-bottom: 20px;" src="public/assets/maria.png" role="img" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"></rect></img>
 
-    <h2 class="white">Heading</h2>
+    <h2 class="white">Maria</h2>
     <p class="white">I went there to get a refund of headphones i bought a week ago because they didnt fit me and there was no problem, really recommend.</p>
     
   </div><!-- /.col-lg-4 -->
-  <div class="col-lg-4">
-    <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"></rect><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
+  <div class="col-lg-4" style="display:flex; align-items:center; flex-direction:column;">
+    <img class="img" style="margin-bottom: 20px;" xmlns="http://www.w3.org/2000/svg" role="img" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"></rect></>
 
-    <h2 class="white">Heading</h2>
+    <h2 class="white">Nicholas</h2>
     <p class="white">I bought a notebook from them. Everything was alright, it came in time and nothing was damaged. Really good</p>
     
   </div><!-- /.col-lg-4 -->
@@ -110,7 +110,7 @@
 
 </div>
 
-<div class="container py-4" style="margin-top:25rem;">
+<div class="container py-4" id="ABOUT US" style="margin-top:25rem;">
     <div class="p-5 mb-4 rounded-3" style="background-image:linear-gradient(45deg, #12c2e9, #c471ed, #f64f59);">
       <div class="py-5 container-fluid">
         <h1 class="display-5 fw-bold">About us</h1>
@@ -126,7 +126,7 @@
           <p>Českomoravská 190 00  Praha 9</p>
         </div>
       </div>
-      <div class="col-md-6">
+      <div class="col-md-6 zkrek">
         <div class="p-5 border h-100 bg-light rounded-3">
           <h2>Opening hours</h2>
           <p>Mo - Fr    8:00-20:00</p>
@@ -200,9 +200,34 @@
         position: relative;
         padding-bottom: 10px;
         color: white;
+        
     }
+
     ul {
         list-style: none;
+    }
+    .img{
+      width: 200px;
+      height: 200px;
+      border: 5px solid linear-gradient(45deg, #12c2e9, #c471ed, #f64f59);
+      float: left;
+      border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+      background-size: cover;
+      background-blend-mode: multiply;
+      animation: morph 8s ease-in-out infinite;
+      background-image: linear-gradient(45deg, #12c2e9, #c471ed, #f64f59);
+    }
+    @keyframes morph{
+      0%{
+        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+      }
+      50%{
+        border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+        
+      }
+      100%{
+        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+      }
     }
 .wrapper{
     max-width: 50rem;
@@ -305,7 +330,7 @@ footer .social-links li a, footer .menu li a{
     color: white;
     margin: 0 10px;
     display: inline-block;
-    transition: 0.5s;
+    transition: 0.2s ease-in;
 }
 footer .social-links li a:hover{
     transform:  translateY(-5px);
@@ -320,6 +345,37 @@ footer .menu li a{
 }
 footer .menu li a:hover{
     opacity: 1;
+}
+@media only screen and (max-width: 700px) {
+  .container-fluid1{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    justify-self: center;
+    align-self: center;
+  }
+  .section-title{
+    font-size: 4rem;
+  }
+}
+@media only screen and (max-width: 775px){
+  .site-title{
+    font-size: 4rem;
+  }
+  .wrapper2{
+    display: flex;
+    max-width: 50rem;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    margin: 5px;
+  }
+  .zkrek{
+    padding-top: 25px;
+  }
 }
 </style>
 

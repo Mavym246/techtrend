@@ -17,7 +17,7 @@
 
 <body>
 
-  <nav class="navbar navbar-expand-lg bg-dark fixed-top">
+  <nav class="navbar navbar-expand-lg bg-dark">
     <div class="container-fluid">
         <a class="navbar-brand left" href="#HOME">
             <img src="#" width="70px" height="70px" alt="logo">
@@ -57,11 +57,11 @@
 </nav>
 
   <div class="container py-4">
-  <div class="p-5 mb-4 rounded-3" style="background-image:linear-gradient(45deg, #12c2e9, #c471ed, #f64f59);">
+  <div class="p-5 mb-4 rounded-5 bg-light">
     <div class="py-5 container-fluid" style="display:flex;flex-direction: column;flex-wrap: wrap;align-content: center;justify-content: center;align-items: center;">
-      <h1 class="display-5 fw-bold">{{ $product->name ?? "N/A" }}</h1>
-      <p class="col-md-8 fs-4">{{ $product->description ?? "N/A" }}</p>
-      <img src="{{ $product->image ?? "N/A" }}" alt="{{ $product->name ?? "N/A" }}">
+      <h1 class="display-5 fw-bold" style="color: #55595c;">{{ $product->name ?? "N/A" }}</h1>
+      <p class="col-md-8 fs-4" style="color: #55595c;">{{ $product->description ?? "N/A" }}</p>
+      <img src="{{ $product->image ?? "N/A" }}" style="width:250px; height:auto;" alt="{{ $product->name ?? "N/A" }}">
     </div>
   </div>
 
@@ -73,7 +73,7 @@
       </div>
     </div>
     <div class="col-md-6">
-      <div class="p-5 border h-100 bg-light rounded-3">
+      <div class="p-5 h-100 color rounded-3">
         <h2>Price</h2>
         <p>From ${{ $product->price ?? "N/A" }}</p>
         
