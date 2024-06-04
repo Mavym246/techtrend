@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="Buyport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    
+    <link rel="stylesheet" href="resources/css/app.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
@@ -31,8 +32,7 @@
             <a class="navbar-brand left" href="#HOME">
                 <img src="#" width="70px" height="70px" alt="logo">
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarul"
-                aria-controls="navbarul" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarul" aria-controls="navbarul" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarul">
@@ -49,7 +49,18 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#REVIEWS">REVIEWS</a>
                     </li>
+                    @auth
+                    <li class="mx-2 nav-item">
+                      <button onclick="location.href='/dashboard'" class="btn btn-primary">Dashboard</button>
+                    </li>
 
+                    <li class="nav-item">
+                      <form method="POST" action="{{ route('logout') }}">
+                        @csrf
+                        <button class="btn btn-danger" type="submit">Logout</button>
+                      </form>
+                    </li>
+                    @endauth
                 </ul>
             </div>
         </div>
@@ -80,9 +91,6 @@
 
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
 
-
-
-
                 @foreach ($products as $product)
                     <div class="col">
                         <div class="shadow-sm card">
@@ -103,15 +111,33 @@
                                         <div>
                                             <a
                                                 href="{{ route('products.edit', ['product' => $product->id_product]) }}">Edit</a>
-                                            <form
-                                                action="{{ route('products.destroy', ['product' => $product->id_product]) }}"
-                                                method="POST" style="display:inline-block;">
-                                                @csrf
-                                                @method('DELETE')
-                                                <button type="submit">Delete</button>
-                                            </form>
+                                                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#confirmDeleteModal-{{ $product->id_product }}">
+                                                    Delete
+                                                </button>
                                         </div>
                                     @endauth
+
+                                    <div class="modal fade" id="confirmDeleteModal-{{ $product->id_product }}" tabindex="-1" aria-labelledby="confirmDeleteModalLabel-{{ $product->id_product }}" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="confirmDeleteModalLabel-{{ $product->id_product }}">Confirm Delete</h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    Are you sure you want to delete this product?
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                                                    <form action="{{ route('products.destroy', ['product' => $product->id_product]) }}" method="POST" style="display:inline-block;">
+                                                        @csrf
+                                                        @method('DELETE')
+                                                        <button type="submit" class="btn btn-danger">Delete</button>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
 
                                 </div>
 
@@ -136,6 +162,11 @@
 
 
             </div>
+            <div class="mt-4 d-flex justify-content-center">
+                {{ $products->onEachSide(-1)->links() }}
+
+            </div>
+
         </div>
     </div>
     <footer>
@@ -206,6 +237,12 @@
 
         .navbar-nav .nav-item .nav-link:hover:after {
             width: 100%;
+        }
+
+        .pager{
+            max-width: 200px;
+            display: flex;
+            
         }
 
         .white {

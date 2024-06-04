@@ -40,11 +40,23 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#REVIEWS">REVIEWS</a>
                     </li>
+                    @auth
+                    <li class="mx-2 nav-item">
+                      <button onclick="location.href='/dashboard'" class="btn btn-primary">Dashboard</button>
+                    </li>
 
+                    <li class="nav-item">
+                      <form method="POST" action="{{ route('logout') }}">
+                        @csrf
+                        <button class="btn btn-danger" type="submit">Logout</button>
+                      </form>
+                    </li>
+                    @endauth
                 </ul>
             </div>
         </div>
     </nav>
+    
     <section class="senction" id="HOME">
         <div class="container-fluid container-fluid1 color" style="height:54rem;">
         <div class="wrapper">        
@@ -62,9 +74,9 @@
         </div>
         <div class="wrapper wrapper2">
     <li><a href="categories/1">Phones</a></li>
-    <li><a href="categories/2">Headphones</a></li>
-    <li><a href="categories/3">Smartwatches</a></li>
-    <li><a href="categories/4">Accesories</a></li>
+    <li><a href="categories/8">Headphones</a></li>
+    <li><a href="categories/2">Smartwatches</a></li>
+    <li><a href="categories/11">Accesories</a></li>
 </div>
        </div>
        </section>

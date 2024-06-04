@@ -17,7 +17,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="" alt="logo">
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg bg-dark">
+    <nav class="navbar navbar-expand-lg bg-dark fixed-top">
         <div class="container-fluid">
             <a class="navbar-brand left" href="#HOME">
                 <img src="#" width="70px" height="70px" alt="logo">
@@ -39,7 +39,18 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#REVIEWS">REVIEWS</a>
                     </li>
+                    @auth
+                    <li class="mx-2 nav-item">
+                      <button onclick="location.href='/dashboard'" class="btn btn-primary">Dashboard</button>
+                    </li>
 
+                    <li class="nav-item">
+                      <form method="POST" action="{{ route('logout') }}">
+                        @csrf
+                        <button class="btn btn-danger" type="submit">Logout</button>
+                      </form>
+                    </li>
+                    @endauth
                 </ul>
             </div>
         </div>

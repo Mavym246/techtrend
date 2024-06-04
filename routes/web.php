@@ -13,7 +13,9 @@ Route::get("/", function() {
 Route::get('/categories', [CategoryController::class, 'index']);
 Route::get('/categories/{id}', [CategoryController::class, 'show']);
 
-Route::resource('/products', ProductController::class)->only(['index', 'show']);
+
+Route::resource('/products', ProductController::class);  //toto funguje ale to mi nechcem chem to jednotliv+
+
 
 
 Route::get('/dashboard', function () {
@@ -25,7 +27,8 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
-    Route::resource('/products', ProductController::class)->except(['index', 'show']);
+
+
 });
 
 require __DIR__.'/auth.php';

@@ -17,39 +17,51 @@
 
 <body>
 
-  <nav class="navbar navbar-expand-lg bg-dark">
-      <div class="container-fluid">
-          <a class="navbar-brand left" href="#HOME">
-              <img src="#" width="70px" height="70px" alt="logo">
-          </a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarul" aria-controls="navbarul" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarul">
-              <ul class="navbar-nav ms-auto right font">
-                  <li class="nav-item">
-                      <a class="nav-link" href="/">HOME</a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link" href="/categories">CATEGORIES</a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link" href="/products" id="#">PRODUCTS</a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link" href="#REVIEWS">REVIEWS</a>
-                  </li>
-              </ul>
-          </div>
-      </div>
-  </nav>
+  <nav class="navbar navbar-expand-lg bg-dark fixed-top">
+    <div class="container-fluid">
+        <a class="navbar-brand left" href="#HOME">
+            <img src="#" width="70px" height="70px" alt="logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarul" aria-controls="navbarul" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarul">
+            <ul class="navbar-nav ms-auto right font">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">HOME</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/categories">CATEGORIES</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/products" id="#">PRODUCTS</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#REVIEWS">REVIEWS</a>
+                </li>
+                @auth
+                <li class="mx-2 nav-item">
+                  <button onclick="location.href='/dashboard'" class="btn btn-primary">Dashboard</button>
+                </li>
+
+                <li class="nav-item">
+                  <form method="POST" action="{{ route('logout') }}">
+                    @csrf
+                    <button class="btn btn-danger" type="submit">Logout</button>
+                  </form>
+                </li>
+                @endauth
+            </ul>
+        </div>
+    </div>
+</nav>
 
   <div class="container py-4">
   <div class="p-5 mb-4 rounded-3" style="background-image:linear-gradient(45deg, #12c2e9, #c471ed, #f64f59);">
     <div class="py-5 container-fluid" style="display:flex;flex-direction: column;flex-wrap: wrap;align-content: center;justify-content: center;align-items: center;">
-      <h1 class="display-5 fw-bold">{{ $product->name }}</h1>
-      <p class="col-md-8 fs-4">{{ $product->description }}</p>
-      <img src="{{ $product->image }}" alt="{{ $product->name }}">
+      <h1 class="display-5 fw-bold">{{ $product->name ?? "N/A" }}</h1>
+      <p class="col-md-8 fs-4">{{ $product->description ?? "N/A" }}</p>
+      <img src="{{ $product->image ?? "N/A" }}" alt="{{ $product->name ?? "N/A" }}">
     </div>
   </div>
 
@@ -57,13 +69,13 @@
     <div class="col-md-6">
       <div class="p-5 text-white h-100 rounded-3" style="background:#12c2e936;">
         <h2>Release Date</h2>
-        <p>{{ $product->release_date }}</p>
+        <p>{{ $product->release_date ?? "N/A" }}</p>
       </div>
     </div>
     <div class="col-md-6">
       <div class="p-5 border h-100 bg-light rounded-3">
         <h2>Price</h2>
-        <p>From ${{ $product->price }}</p>
+        <p>From ${{ $product->price ?? "N/A" }}</p>
         
       </div>
     </div>

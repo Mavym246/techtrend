@@ -18,32 +18,43 @@
 <body>
 
   <nav class="navbar navbar-expand-lg bg-dark fixed-top">
-      <div class="container-fluid">
-          <a class="navbar-brand left" href="#HOME">
-              <img src="#" width="70px" height="70px" alt="logo">
-          </a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarul" aria-controls="navbarul" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarul">
-              <ul class="navbar-nav ms-auto right font">
-                  <li class="nav-item">
-                      <a class="nav-link" href="/">HOME</a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link" href="/categories">CATEGORIES</a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link" href="/products" id="#">PRODUCTS</a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link" href="#REVIEWS">REVIEWS</a>
-                  </li>
+    <div class="container-fluid">
+        <a class="navbar-brand left" href="#HOME">
+            <img src="#" width="70px" height="70px" alt="logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarul" aria-controls="navbarul" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarul">
+            <ul class="navbar-nav ms-auto right font">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">HOME</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/categories">CATEGORIES</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/products" id="#">PRODUCTS</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#REVIEWS">REVIEWS</a>
+                </li>
+                @auth
+                <li class="mx-2 nav-item">
+                  <button onclick="location.href='/dashboard'" class="btn btn-primary">Dashboard</button>
+                </li>
 
-              </ul>
-          </div>
-      </div>
-  </nav>
+                <li class="nav-item">
+                  <form method="POST" action="{{ route('logout') }}">
+                    @csrf
+                    <button class="btn btn-danger" type="submit">Logout</button>
+                  </form>
+                </li>
+                @endauth
+            </ul>
+        </div>
+    </div>
+</nav>
 
   <main>
 <div class="overflow-hidden text-center position-relative p-md-5 color">
@@ -94,11 +105,6 @@
                   @endauth
 
               </div>
-
-
-
-
-
             <div class="d-flex justify-content-between align-items-center">
               <div class="btn-group">
                 <button type="button" class="btn btn-sm btn-outline-secondary">Buy</button>
@@ -110,9 +116,6 @@
         </div>
       </div>
       @endforeach
-
-
-
 
       
     </div>
