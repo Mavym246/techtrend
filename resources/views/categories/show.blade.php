@@ -37,7 +37,7 @@
                     <a class="nav-link" href="/products" id="#">PRODUCTS</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#REVIEWS">REVIEWS</a>
+                    <a class="nav-link" href="/#REVIEWS">REVIEWS</a>
                 </li>
                 @auth
                 <li class="mx-2 nav-item">
@@ -86,9 +86,9 @@
 
 
       @foreach ($products as $product)
-      <div class="col">
+      <div class="col" data-aos="fade-in">
         <div class="shadow-sm card">
-          <img class="bd-placeholder-img card-img-top" style="padding:50;" width="100%" height="500" src="{{ $product->image }}"" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">{{ $product->name }}</text></>
+          <img class="bd-placeholder-img card-img-top" style="padding:25;" src="{{ $product->image }}"" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">{{ $product->name }}</text></>
           <div class="card-body">
               <div class="d-flex justify-content-between">
                   <p class="card-text"><a href="{{ route('products.show', ['product' => $product->id_product]) }}">See more</a></p>
@@ -230,25 +230,14 @@ footer .menu li a{
 footer .menu li a:hover{
   opacity: 1;
 }
-@media only screen and (max-width: 1400px) {
 .card-img-top{
-  height: 400px;
-}
-}  
-@media only screen and (max-width: 1200px) {
-.card-img-top{
-  height: 350px;
-}
-}  
-@media only screen and (max-width: 990px) {
-.card-img-top{
-  height: 300px;
-}
-}
-@media only screen and (max-width: 576px) {
-.card-img-top{
-  height: 600px;
-}
-}
+            width: 100%; 
+            height: auto; 
+            aspect-ratio:  1/1;
+             object-fit: contain;
+        }
 </style>
+<script>
+    AOS.init();
+  </script>
       </body>

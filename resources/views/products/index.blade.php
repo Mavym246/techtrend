@@ -9,9 +9,6 @@
     <link rel="stylesheet" href="resources/css/app.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>
-        AOS.init();
-    </script>
 
     <link rel="stylesheet" type="text/css"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
@@ -47,7 +44,7 @@
                         <a class="nav-link" href="/products" id="#">PRODUCTS</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#REVIEWS">REVIEWS</a>
+                        <a class="nav-link" href="/#REVIEWS">REVIEWS</a>
                     </li>
                     @auth
                     <li class="mx-2 nav-item">
@@ -92,15 +89,15 @@
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
 
                 @foreach ($products as $product)
-                    <div class="col">
-                        <div class="shadow-sm card">
-                            <img class="bd-placeholder-img card-img-top" style="padding:50;" width="100%"
-                                height="500" src="{{ $product->image }}"" role="img"
+                    <div class="col" data-aos="fade-in">
+                        <div class="shadow-sm card"  >
+                            <img class="bd-placeholder-img card-img-top" style="padding:40;"
+                                 src="{{ $product->image }}" role="img"
                                 aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice"
                                 focusable="false">
                             <title>Placeholder</title>
-                            <rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%"
-                                fill="#eceeef" dy=".3em">{{ $product->name }}</text></>
+                            <rect width="100%" height="100%"  fill="#55595c"></rect><text x="50%" y="50%"
+                                fill="#eceeef" dy=".3em">{{ $product->name  }} </text></>
                             <div class="card-body">
                                 <div class="d-flex justify-content-between">
                                     <p class="card-text"><a
@@ -150,7 +147,7 @@
                                         <button type="button" class="btn btn-sm btn-outline-secondary">Buy</button>
                                     </div>
 
-                                    <small class="text-body-secondary">9 mins</small>
+                                    <small class="text-body-secondary">_________</small>
                                 </div>
                             </div>
                         </div>
@@ -310,29 +307,15 @@
         footer .menu li a:hover {
             opacity: 1;
         }
-
-        @media only screen and (max-width: 1400px) {
-            .card-img-top {
-                height: 400px;
-            }
+        .card-img-top{
+            width: 100%; 
+            height: auto; 
+            aspect-ratio:  1/1;
+             object-fit: contain;
         }
 
-        @media only screen and (max-width: 1200px) {
-            .card-img-top {
-                height: 350px;
-            }
-        }
-
-        @media only screen and (max-width: 990px) {
-            .card-img-top {
-                height: 300px;
-            }
-        }
-
-        @media only screen and (max-width: 576px) {
-            .card-img-top {
-                height: 600px;
-            }
-        }
     </style>
+    <script>
+    AOS.init();
+  </script>
 </body>

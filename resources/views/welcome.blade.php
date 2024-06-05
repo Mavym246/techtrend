@@ -4,12 +4,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="Buyport" content="width=device-width, initial-scale=1.0">
   <title></title>
-  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-<script>
-  AOS.init();
-</script>
 
+  
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script><style type="text/css" id="operaUserStyle"></style>
@@ -58,7 +56,7 @@
     </nav>
     
     <section class="senction" id="HOME">
-        <div class="container-fluid container-fluid1 color" style="height:54rem;">
+        <div class="container-fluid container-fluid1 css-selector animace  h-100">
         <div class="wrapper">        
        <h2 class="section-title">TECHTREND</h2>
        <p class="section-info">Discover our modern technologies <br> With us, everything is possible</p>
@@ -80,27 +78,27 @@
 </div>
        </div>
        </section>
-    <section class="section-neco" style="height:35rem;" id="REVIEWS">
+    <section class="section-neco" style="height:35rem;" id="REVIEWS" data-aos="zoom-in-up" data-aos-duration="500">
     <div class="container marketing" style="margin-top:3rem;">
 
 <!-- Three columns of text below the carousel -->
-<div class="row">
+<div class="row ">
   <div class="col-lg-4" style="display:flex; align-items:center; flex-direction:column;">
-    <img class="img" style="margin-bottom: 20px;" xmlns="http://www.w3.org/2000/svg" role="img" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"></rect></img>
+    <img class="img" style="margin-bottom: 20px;" src="/assets/photo1.jpg" role="img" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"></rect></img>
 
     <h2 class="white">Cole</h2>
     <p class="white">I bought a phone for my son and was pleasantly surprised. The staff was really friendly. I recommend it to everyone.</p>
     
   </div><!-- /.col-lg-4 -->
   <div class="col-lg-4" style="display:flex; align-items:center; flex-direction:column;">
-    <img class="img" style="margin-bottom: 20px;" src="public/assets/maria.png" role="img" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"></rect></img>
+    <img class="img" style="margin-bottom: 20px;" src="/assets/maria.png" role="img" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"></rect></img>
 
     <h2 class="white">Maria</h2>
     <p class="white">I went there to get a refund of headphones i bought a week ago because they didnt fit me and there was no problem, really recommend.</p>
     
   </div><!-- /.col-lg-4 -->
   <div class="col-lg-4" style="display:flex; align-items:center; flex-direction:column;">
-    <img class="img" style="margin-bottom: 20px;" xmlns="http://www.w3.org/2000/svg" role="img" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"></rect></>
+    <img class="img" style="margin-bottom: 20px;" src="/assets/nich.jpg" role="img" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"></rect></>
 
     <h2 class="white">Nicholas</h2>
     <p class="white">I bought a notebook from them. Everything was alright, it came in time and nothing was damaged. Really good</p>
@@ -110,7 +108,7 @@
 
 </div>
 
-<div class="container py-4" id="ABOUT US" style="margin-top:25rem;">
+<div class="container py-4" id="ABOUT US" style="margin-top:25rem;" data-aos="zoom-in-up" data-aos-duration="500">
     <div class="p-5 mb-4 rounded-3" style="background-image:linear-gradient(45deg, #12c2e9, #c471ed, #f64f59);">
       <div class="py-5 container-fluid">
         <h1 class="display-5 fw-bold">About us</h1>
@@ -209,7 +207,8 @@
     .img{
       width: 200px;
       height: 200px;
-      border: 5px solid linear-gradient(45deg, #12c2e9, #c471ed, #f64f59);
+      object-fit:cover;
+      border: 2px solid white;
       float: left;
       border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
       background-size: cover;
@@ -377,7 +376,40 @@ footer .menu li a:hover{
     padding-top: 25px;
   }
 }
-</style>
+.css-selector {
+    background: linear-gradient(46deg, #12c2e9, #c471ed, #f64f59, #000000);
+    background-size: 800% 800%;
 
+    -webkit-animation: animace 15s ease infinite;
+    -moz-animation: animace 15s ease infinite;
+    -o-animation: animace 15s ease infinite;
+    animation: animace 15s ease infinite;
+}
+
+@-webkit-keyframes animace {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@-moz-keyframes animace {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@-o-keyframes animace {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@keyframes animace {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+
+</style>
+<script>
+  AOS.init();
+</script>
 </body>
 </html>

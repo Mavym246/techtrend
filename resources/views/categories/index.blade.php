@@ -4,11 +4,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="Buyport" content="width=device-width, initial-scale=1.0">
     <title></title>
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-  <script>
-    AOS.init();
-  </script>
+
+  
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  
   
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
@@ -38,7 +38,7 @@
                         <a class="nav-link" href="/products" id="#">PRODUCTS</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#REVIEWS">REVIEWS</a>
+                        <a class="nav-link" href="/#REVIEWS">REVIEWS</a>
                     </li>
                     @auth
                     <li class="mx-2 nav-item">
@@ -64,8 +64,8 @@
 
 
         @foreach ($categories as $category)
-        <div class="col-md-6">
-            <div class="p-5 pt-5 text-center text-white h-100 rounded-3 text-center color">
+        <div class="col-md-6" data-aos="zoom-in">
+            <div class="p-5 pt-5 text-center text-white h-100 rounded-3 text-center css-selector animace">
               <h2 class="text-white" style="text-decoration:none;"><a href="{{ url('/categories/' . $category->id_category) }}">{{ $category->name }}</a></h2>
             </div>
           </div>
@@ -201,4 +201,39 @@ footer .menu li a:hover{
     opacity: 1;
     
 }
+.css-selector {
+    background: linear-gradient(46deg, #12c2e9, #c471ed, #f64f59, #000000);
+    background-size: 800% 800%;
+
+    -webkit-animation: animace 15s ease infinite;
+    -moz-animation: animace 15s ease infinite;
+    -o-animation: animace 15s ease infinite;
+    animation: animace 15s ease infinite;
+}
+
+@-webkit-keyframes animace {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@-moz-keyframes animace {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@-o-keyframes animace {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@keyframes animace {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+
 </style>
+<script>
+    AOS.init();
+  </script>
+</body>
